@@ -1,8 +1,8 @@
 {
-    "name": "symfony/skeleton",
+    "name": "asier-zunzu/newsletter-editor",
     "type": "project",
     "license": "MIT",
-    "description": "A minimal Symfony project recommended to create bare bones applications",
+    "description": "A custom newsletter editor",
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
