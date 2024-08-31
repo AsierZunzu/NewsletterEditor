@@ -37,7 +37,13 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('App');
+            ->setTitle('Newsletter editor')
+            ->setLocales([
+                'es' => t('Spanish'),
+                'en' => t('English'),
+            ])
+//            ->setFaviconPath('favicon.svg')
+            ;
     }
 
     public function configureMenuItems(): iterable

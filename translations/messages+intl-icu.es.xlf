@@ -17,6 +17,14 @@
         <source>Roles</source>
         <target>Roles</target>
       </trans-unit>
+      <trans-unit id="YHU6HyX" resname="Spanish">
+        <source>Spanish</source>
+        <target>Español</target>
+      </trans-unit>
+      <trans-unit id="NR2RdXC" resname="English">
+        <source>English</source>
+        <target>Inglés</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
