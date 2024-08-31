@@ -9,6 +9,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use function Symfony\Component\Translation\t;
 
 class AdminUserCrudController extends AbstractCrudController
 {
@@ -26,9 +27,9 @@ class AdminUserCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('username'),
-            EmailField::new('email'),
-            ChoiceField::new('roles')
+            TextField::new('username', t('Username')),
+            EmailField::new('email', t('Email')),
+            ChoiceField::new('roles', t('Roles'))
                 ->allowMultipleChoices()
                 ->setFormTypeOption('choices', Roles::cases())
                 ->setFormTypeOption('choice_label', function (Roles $choice) {
