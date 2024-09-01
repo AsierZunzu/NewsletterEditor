@@ -21,6 +21,8 @@ class UserFixtures extends Fixture
         $manager->persist($user);
         $user = $this->generateAdminUser();
         $manager->persist($user);
+        $user = $this->generateEditorUser();
+        $manager->persist($user);
         $manager->flush();
     }
 
@@ -50,6 +52,21 @@ class UserFixtures extends Fixture
             $plaintextPassword,
         );
         $user->setRoles([Roles::ADMIN->value]);
+        $user->setPassword($hashedPassword);
+        return $user;
+    }
+
+    private function generateEditorUser(): User
+    {
+        $user = new User();
+        $user->setUsername('editorUser');
+        $user->setEmail('editor@mail.com');
+        $plaintextPassword = 'pwgen123';
+        $hashedPassword = $this->passwordHasher->hashPassword(
+            $user,
+            $plaintextPassword,
+        );
+        $user->setRoles([Roles::EDITOR->value]);
         $user->setPassword($hashedPassword);
         return $user;
     }
