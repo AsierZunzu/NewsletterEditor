@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Enum\Roles;
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -35,6 +37,26 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     #[ORM\Column]
     private ?string $password = null;
+
+    /**
+     * @var Collection<int, NewsletterEntry>
+     */
+    #[ORM\OneToMany(targetEntity: NewsletterEntry::class, mappedBy: 'createdBy', orphanRemoval: true)]
+    private Collection $newsletterEntries;
+
+    /**
+     * @var Collection<int, Draft>
+     */
+    #[ORM\OneToMany(targetEntity: Draft::class, mappedBy: 'createdBy', orphanRemoval: true)]
+    private Collection $drafts;
+
+    public function __construct()
+    {
+        $this->newsletterEntries = new ArrayCollection();
+        $this->drafts = new ArrayCollection();
+    }
+
+    //TODO allow disabling users
 
     public function getId(): ?int
     {
@@ -121,5 +143,70 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    /**
+     * @return Collection<int, NewsletterEntry>
+     */
+    public function getNewsletterEntries(): Collection
+    {
+        return $this->newsletterEntries;
+    }
+
+    public function addNewsletterEntry(NewsletterEntry $newsletterEntry): static
+    {
+        if (!$this->newsletterEntries->contains($newsletterEntry)) {
+            $this->newsletterEntries->add($newsletterEntry);
+            $newsletterEntry->setCreatedBy($this);
+        }
+
+        return $this;
+    }
+
+    public function removeNewsletterEntry(NewsletterEntry $newsletterEntry): static
+    {
+        if ($this->newsletterEntries->removeElement($newsletterEntry)) {
+            // set the owning side to null (unless already changed)
+            if ($newsletterEntry->getCreatedBy() === $this) {
+                $newsletterEntry->setCreatedBy(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Draft>
+     */
+    public function getDrafts(): Collection
+    {
+        return $this->drafts;
+    }
+
+    public function addDraft(Draft $draft): static
+    {
+        if (!$this->drafts->contains($draft)) {
+            $this->drafts->add($draft);
+            $draft->setCreatedBy($this);
+        }
+
+        return $this;
+    }
+
+    public function removeDraft(Draft $draft): static
+    {
+        if ($this->drafts->removeElement($draft)) {
+            // set the owning side to null (unless already changed)
+            if ($draft->getCreatedBy() === $this) {
+                $draft->setCreatedBy(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->username;
     }
 }
