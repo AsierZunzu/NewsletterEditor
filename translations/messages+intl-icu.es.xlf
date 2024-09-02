@@ -25,6 +25,82 @@
         <source>English</source>
         <target>Inglés</target>
       </trans-unit>
+      <trans-unit id="Iv2b3Nc" resname="Drafts">
+        <source>Drafts</source>
+        <target>Borradores</target>
+      </trans-unit>
+      <trans-unit id="_61VrxD" resname="Newsletter entries">
+        <source>Newsletter entries</source>
+        <target>Entrada newsletter</target>
+      </trans-unit>
+      <trans-unit id="s2yo9Sc" resname="Newsletter">
+        <source>Newsletter</source>
+        <target>Newsletter</target>
+      </trans-unit>
+      <trans-unit id="BCGjfox" resname="Users">
+        <source>Users</source>
+        <target>Usuarios</target>
+      </trans-unit>
+      <trans-unit id="dwUtS3b" resname="Draft">
+        <source>Draft</source>
+        <target>Borrador</target>
+      </trans-unit>
+      <trans-unit id="n7JUJSH" resname="Publish draft">
+        <source>Publish draft</source>
+        <target>Publicar borrador</target>
+      </trans-unit>
+      <trans-unit id="ZQ0xUMe" resname="Newsletters">
+        <source>Newsletters</source>
+        <target>Newsletters</target>
+      </trans-unit>
+      <trans-unit id="EWl2q7l" resname="Preview newsletter">
+        <source>Preview newsletter</source>
+        <target>Previsualizar newsletter</target>
+      </trans-unit>
+      <trans-unit id="FDspiiD" resname="Send now">
+        <source>Send now</source>
+        <target>Enviar ahora</target>
+      </trans-unit>
+      <trans-unit id="peNKWRR" resname="Newsletter entry">
+        <source>Newsletter entry</source>
+        <target>Entrada Newsletter</target>
+      </trans-unit>
+      <trans-unit id=".zZzsFp" resname="Title">
+        <source>Title</source>
+        <target>Título</target>
+      </trans-unit>
+      <trans-unit id="AbWvrhO" resname="Content">
+        <source>Content</source>
+        <target>Contenido</target>
+      </trans-unit>
+      <trans-unit id="P9_Y7yU" resname="Created by">
+        <source>Created by</source>
+        <target>Creado por</target>
+      </trans-unit>
+      <trans-unit id="xxcNfD1" resname="Unpublish entry">
+        <source>Unpublish entry</source>
+        <target>Des-publicar entrada</target>
+      </trans-unit>
+      <trans-unit id="xMNOcMi" resname="Publish">
+        <source>Publish</source>
+        <target>Publicar</target>
+      </trans-unit>
+      <trans-unit id="TkiKoB6" resname="User">
+        <source>User</source>
+        <target>Usuario</target>
+      </trans-unit>
+      <trans-unit id="37wivZ3" resname="ID">
+        <source>ID</source>
+        <target>ID</target>
+      </trans-unit>
+      <trans-unit id="rmqcSiK" resname="Sent">
+        <source>Sent</source>
+        <target>Enviado</target>
+      </trans-unit>
+      <trans-unit id="SdhQjq0" resname="Entries">
+        <source>Entries</source>
+        <target>Entradas</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

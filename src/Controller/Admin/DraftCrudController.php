@@ -49,10 +49,10 @@ class DraftCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-        yield TextField::new('title');
-        yield TextEditorField::new('content')
+        yield TextField::new('title', t('Title'));
+        yield TextEditorField::new('content', t('Content'))
             ->hideOnIndex();
-        yield AssociationField::new('createdBy')
+        yield AssociationField::new('createdBy', t('Created by'))
             ->setPermission(Roles::EDITOR->value)
             ->hideWhenCreating()
             ->setDisabled()
