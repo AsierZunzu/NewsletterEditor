@@ -13,6 +13,12 @@ Follow instructions at [symfony-docker project's README](https://github.com/dung
 
 1. Run `bin/console doctrine:fixtures:load` to load data fixtures. More info at `src\DataFixtures`.
 
+## Running the linter
+
+Once installed (`composer install --working-dir=tools/linter`) run the linter by executing `tools/linter/vendor/bin/php-cs-fixer fix src`
+
+You can also run it on a pre-build Docker image wih `docker run -it --rm -v $(pwd):/code ghcr.io/php-cs-fixer/php-cs-fixer:${FIXER_VERSION:-3-php8.3} fix src` (on Powershell/Windows replace `$(pwd)` with `${pwd}`)
+
 ## License
 
 WIP
