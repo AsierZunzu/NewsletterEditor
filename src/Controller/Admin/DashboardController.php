@@ -2,11 +2,16 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\CalendarEvent;
+use App\Entity\Draft;
+use App\Entity\Newsletter;
+use App\Entity\NewsletterEntry;
 use App\Entity\User;
 use App\Enum\Roles;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
+use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -15,23 +20,14 @@ class DashboardController extends AbstractDashboardController
     #[Route('/admin', name: 'admin')]
     public function index(): Response
     {
-        return parent::index();
-
-        // Option 1. You can make your dashboard redirect to some common page of your backend
-        //
-        // $adminUrlGenerator = $this->container->get(AdminUrlGenerator::class);
-        // return $this->redirect($adminUrlGenerator->setController(OneOfYourCrudController::class)->generateUrl());
-
-        // Option 2. You can make your dashboard redirect to different pages depending on the user
-        //
-        // if ('jane' === $this->getUser()->getUsername()) {
-        //     return $this->redirect('...');
-        // }
-
-        // Option 3. You can render some custom template to display a proper dashboard with widgets, etc.
-        // (tip: it's easier if your template extends from @EasyAdmin/page/content.html.twig)
-        //
-        // return $this->render('some/path/my-dashboard.html.twig');
+        $adminUrlGenerator = $this->container->get(AdminUrlGenerator::class);
+        if (in_array(Roles::ADMIN->value, $this->getUser()->getRoles())) {
+            return $this->redirect($adminUrlGenerator->setController(AdminUserCrudController::class)->generateUrl());
+        }
+        if (in_array(Roles::EDITOR->value, $this->getUser()->getRoles())) {
+            return $this->redirect($adminUrlGenerator->setController(NewsletterCrudController::class)->generateUrl());
+        }
+        return $this->redirect($adminUrlGenerator->setController(DraftCrudController::class)->generateUrl());
     }
 
     public function configureDashboard(): Dashboard
@@ -48,7 +44,11 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToCrud('Users', 'fas fa-user', User::class)
+        yield MenuItem::linkToCrud(t('Drafts'), 'fas fa-pen', Draft::class);
+        yield MenuItem::linkToCrud(t('Newsletter entries'), 'fas fa-note-sticky', NewsletterEntry::class);
+        yield MenuItem::linkToCrud(t('Newsletter'), 'fas fa-newspaper', Newsletter::class)
+            ->setPermission(Roles::EDITOR->value);
+        yield MenuItem::linkToCrud(t('Users'), 'fas fa-user', User::class)
             ->setController(AdminUserCrudController::class)
             ->setPermission(Roles::ADMIN->value);
     }
