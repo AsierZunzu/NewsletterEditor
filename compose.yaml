@@ -1,5 +1,6 @@
 services:
   php:
+    container_name: php
     image: ${IMAGES_PREFIX:-}app-php
     restart: unless-stopped
     environment:
@@ -40,6 +41,7 @@ services:
 
 ###> doctrine/doctrine-bundle ###
   database:
+    container_name: database
     image: postgres:${POSTGRES_VERSION:-16}-alpine
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-app}
@@ -61,6 +63,7 @@ services:
 ###< doctrine/doctrine-bundle ###
   
   mailpit:
+    container_name: mailpit
     image: 'axllent/mailpit:latest'
     ports:
       - '${FORWARD_MAILPIT_PORT:-1025}:1025'
