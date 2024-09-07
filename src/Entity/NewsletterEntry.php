@@ -80,4 +80,9 @@ class NewsletterEntry
 
         return $this;
     }
+
+    public function __toString(): string
+    {
+        return "$this->title (by {$this->createdBy->getUsername()})";
+    }
 }

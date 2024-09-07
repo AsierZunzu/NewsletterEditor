@@ -79,6 +79,7 @@ class NewsletterEntryCrudController extends AbstractCrudController
             );
         });
         $actions->disable(Action::EDIT, Action::BATCH_DELETE);
+        $actions->add(Crud::PAGE_EDIT, Action::INDEX);
         return $actions;
     }
 

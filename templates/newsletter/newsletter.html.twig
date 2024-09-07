@@ -1,0 +1,16 @@
+{# @var newsletter \App\Entity\Newsletter #}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ newsletter.title }}</title>
+    </head>
+    <body>
+        <h1>{{ newsletter.title }}</h1>
+        {# @var entry \App\Entity\NewsletterEntry #}
+        {% for entry in newsletter.entries %}
+            {{ include('newsletter/newsletterEntry.html.twig', {
+                entry: entry
+            }) }}
+        {% endfor %}
+    </body>
+</html>
