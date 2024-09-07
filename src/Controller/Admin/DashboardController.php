@@ -38,6 +38,7 @@ class DashboardController extends AbstractDashboardController
             ->setTitle('Newsletter editor')
             ->setLocales([
                 'es' => t('Spanish'),
+                'eu' => t('Basque'),
                 'en' => t('English'),
             ])
 //            ->setFaviconPath('favicon.svg')

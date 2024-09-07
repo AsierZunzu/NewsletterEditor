@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="es" target-language="eu" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="TkiKoB6" resname="User">
+        <source>User</source>
+        <target>Erabiltzailea</target>
+      </trans-unit>
+      <trans-unit id="BCGjfox" resname="Users">
+        <source>Users</source>
+        <target>Erabiltzaileak</target>
+      </trans-unit>
+      <trans-unit id="VhxhtYo" resname="Username">
+        <source>Username</source>
+        <target>Erabiltzaile izena</target>
+      </trans-unit>
+      <trans-unit id="JZi_tm0" resname="Email">
+        <source>Email</source>
+        <target>Posta elektronikoa</target>
+      </trans-unit>
+      <trans-unit id="aq2eM8Q" resname="Roles">
+        <source>Roles</source>
+        <target>Rolak</target>
+      </trans-unit>
+      <trans-unit id="YHU6HyX" resname="Spanish">
+        <source>Spanish</source>
+        <target>Gaztelera</target>
+      </trans-unit>
+      <trans-unit id="VNPyy5F" resname="Basque">
+        <source>Basque</source>
+        <target>Euskera</target>
+      </trans-unit>
+      <trans-unit id="NR2RdXC" resname="English">
+        <source>English</source>
+        <target>Ingelesa</target>
+      </trans-unit>
+      <trans-unit id="Iv2b3Nc" resname="Drafts">
+        <source>Drafts</source>
+        <target>Zirriborroak</target>
+      </trans-unit>
+      <trans-unit id="_61VrxD" resname="Newsletter entries">
+        <source>Newsletter entries</source>
+        <target>Buletinen sarrerak</target>
+      </trans-unit>
+      <trans-unit id="s2yo9Sc" resname="Newsletter">
+        <source>Newsletter</source>
+        <target>Buletina</target>
+      </trans-unit>
+      <trans-unit id="_zOCM0p" resname="Recurring calendar events">
+        <source>Recurring calendar events</source>
+        <target>Egutegiko gertakari errepikakorrak</target>
+      </trans-unit>
+      <trans-unit id="dwUtS3b" resname="Draft">
+        <source>Draft</source>
+        <target>Zirriborroa</target>
+      </trans-unit>
+      <trans-unit id=".zZzsFp" resname="Title">
+        <source>Title</source>
+        <target>Izenburua</target>
+      </trans-unit>
+      <trans-unit id="AbWvrhO" resname="Content">
+        <source>Content</source>
+        <target>Edukina</target>
+      </trans-unit>
+      <trans-unit id="P9_Y7yU" resname="Created by">
+        <source>Created by</source>
+        <target>Nork sortua</target>
+      </trans-unit>
+      <trans-unit id="n7JUJSH" resname="Publish draft">
+        <source>Publish draft</source>
+        <target>Argitaratu zirriborroa</target>
+      </trans-unit>
+      <trans-unit id="ZQ0xUMe" resname="Newsletters">
+        <source>Newsletters</source>
+        <target>Buletinak</target>
+      </trans-unit>
+      <trans-unit id="37wivZ3" resname="ID">
+        <source>ID</source>
+        <target>ID</target>
+      </trans-unit>
+      <trans-unit id="rmqcSiK" resname="Sent">
+        <source>Sent</source>
+        <target>Bidalia</target>
+      </trans-unit>
+      <trans-unit id="SdhQjq0" resname="Entries">
+        <source>Entries</source>
+        <target>Sarrerak</target>
+      </trans-unit>
+      <trans-unit id="EWl2q7l" resname="Preview newsletter">
+        <source>Preview newsletter</source>
+        <target>Aurreikusi buletina</target>
+      </trans-unit>
+      <trans-unit id="FDspiiD" resname="Send now">
+        <source>Send now</source>
+        <target>Orain bidali</target>
+      </trans-unit>
+      <trans-unit id="peNKWRR" resname="Newsletter entry">
+        <source>Newsletter entry</source>
+        <target>Buletin sarrera</target>
+      </trans-unit>
+      <trans-unit id="xxcNfD1" resname="Unpublish entry">
+        <source>Unpublish entry</source>
+        <target>Kendu sarrera</target>
+      </trans-unit>
+      <trans-unit id="xMNOcMi" resname="Publish">
+        <source>Publish</source>
+        <target>Argitaratu</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
